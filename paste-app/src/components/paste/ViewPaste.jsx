@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useSearchParams } from 'react-router-dom';
-import { addToPastes, updateTopastes } from '../redux/pasteSlice';
+import { addToPastes, updateTopastes } from '../../redux/slices/pasteSlice';
 
 const ViewPaste = () => {
 
@@ -9,6 +9,14 @@ const ViewPaste = () => {
 
     const allPaste = useSelector((state)=> state.paste.pastes);
     const paste = allPaste.find((p) => p._id === id);
+
+    if (!paste) {
+        return (
+            <div className="w-full max-w-2xl mx-auto mt-10 text-center text-red-400">
+                Paste not found.
+            </div>
+        );
+    }
 
     return (
         <div className="w-full max-w-2xl mx-auto mt-10">

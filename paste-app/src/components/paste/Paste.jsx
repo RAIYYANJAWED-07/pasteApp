@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { removeFromPastes } from '../redux/pasteSlice';
+import { removeFromPastes } from '../../redux/slices/pasteSlice';
 import toast from 'react-hot-toast';
 import { FiEdit, FiEye, FiTrash2, FiCopy, FiShare2 } from 'react-icons/fi';
 
